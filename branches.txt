@@ -1,0 +1,4 @@
+git checkout -b nombredelacarpeta
+git add .
+git commit -m "Init"
+git push origin nombredelacarpeta
