@@ -1,0 +1,11 @@
+docker images
+
+docker ps
+
+docker pull mysql:8.0
+
+docker run --name mysql-banking-ms -p3306:3306 -e MYSQL_ROOT_PASSWORD=12345 -e MYSQL_DATABASE=db_client_service -d mysql:8.0
+
+docker exec -it mysql-banking-ms bash
+
+mysql -uroot -p12345
