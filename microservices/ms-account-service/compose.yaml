@@ -1,0 +1,15 @@
+services:
+  mysql-cuentas:
+    image: mysql:8.4
+    container_name: demo-bank-mysql-cuentas
+    environment:
+      MYSQL_DATABASE: db_account_service
+      MYSQL_USER: ${DB_USER:-account_app}
+      MYSQL_PASSWORD: ${DB_PASSWORD:?Define DB_PASSWORD en .env}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?Define DB_ROOT_PASSWORD en .env}
+    ports:
+      - "3308:3306"
+    volumes:
+      - cuentas_data:/var/lib/mysql
+volumes:
+  cuentas_data:
